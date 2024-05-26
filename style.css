@@ -1,0 +1,136 @@
+/* || RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+
+/* || VARIABLES */
+
+:root {
+    /* || DURATIONS */
+    --DURATION: 500ms;
+
+    /* || COLORS */
+    --CORAL: #F2542D;
+    --DARK_GRAYISH_RED: #562C2C;
+    --LIGHT_CYAN: #77EBEA;
+    --LIGHT_PINKISH_GRAY: #f3d7d4;
+    --TEAL: #127475;
+}
+
+/* || UTILITY CLASSES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* || GENERAL CLASSES */
+
+body {
+    min-height: 100vh;
+    background-image: radial-gradient(circle, var(--LIGHT_PINKISH_GRAY), var(--DARK_GRAYISH_RED));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: "Nunito", sans-serif;
+    position: absolute;
+    font-size: clamp(1rem, 2.2vh, 1.5rem);
+    max-width: 200px;
+    white-space: wrap;
+    text-align: center;
+}
+
+.box-container {
+    width: 90vmin;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-width: 10px;
+    border-color: var(--CORAL);
+    border-style: groove;
+    box-shadow: 0 0 50px var(--LIGHT_PINKISH_GRAY);
+}
+
+.box {
+    width: 10%;
+    height: 10%;
+    background-color: var(--LIGHT_CYAN);
+    box-shadow: inset 0 0 1vw var(--TEAL);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all var(--DURATION);
+    display: flex;
+    border: 2px solid var(--TEAL);
+}
+
+.inner-box {
+    width: 100%;
+    height: 100%;
+}
+
+.moveFade {
+    animation-name: moveFade;
+    animation-duration: var(--DURATION);
+    animation-fill-mode: forwards;
+}
+
+.jumpShadow {
+    animation-name: jumpShadow;
+    animation-duration: var(--DURATION);
+    animation-fill-mode: forwards;
+}
+
+@keyframes jumpShadow {
+    0% {
+        box-shadow: 0 0 0px var(--DARK_GRAYISH_RED);
+    }
+
+    33% {
+        box-shadow: 0 0 40px var(--DARK_GRAYISH_RED);
+    }
+
+    66% {
+        box-shadow: inset 0 0 10px var(--DARK_GRAYISH_RED);
+    }
+
+    100% {
+        box-shadow: 0 0 0px var(--DARK_GRAYISH_RED);
+    }
+}
+
+@keyframes moveFade {
+    0% {
+        transform: scale(1);
+    }
+
+    33% {
+        transform: scale(1.2);
+    }
+
+    66% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
