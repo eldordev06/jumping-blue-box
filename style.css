@@ -55,7 +55,8 @@ body {
     font-family: "Nunito", sans-serif;
     position: absolute;
     font-size: clamp(1rem, 2.2vh, 1.5rem);
-    max-width: 200px;
+    max-width: 500px;
+    width: 60vw;
     white-space: wrap;
     text-align: center;
 }
@@ -64,7 +65,7 @@ body {
     width: 90vmin;
     aspect-ratio: 1 / 1;
     position: relative;
-    border-width: 10px;
+    border-width: clamp(8px, 2.5vw, 14px);
     border-color: var(--CORAL);
     border-style: groove;
     box-shadow: 0 0 50px var(--LIGHT_PINKISH_GRAY);
