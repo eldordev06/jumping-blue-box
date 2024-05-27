@@ -31,6 +31,8 @@ window.onkeyup = (e) => {
             box.style.left = axisX + "%";
             animateBox(box, jumpShadow);
         }
+    } else if (e.code == "Space") {
+        animateBox(box, jumpShadow);
     }
 };
 
@@ -102,5 +104,7 @@ function handleGesture() {
                 }
             }
         }
+    } else {
+        animateBox(box, jumpShadow);
     }
 }
