@@ -2,6 +2,40 @@
 
 const box = document.querySelector(".box");
 const jumpShadow = document.querySelector(".jump-shadow");
+const redBox = document.querySelector(".box-container");
+const title = document.querySelector(".title")
+
+if(window.matchMedia("(pointer: coarse)").matches) {
+    title.innerHTML = `
+        <span class="nowrap">Swipe / tap</span>
+        <span class="nowrap">(inside the red box)</span>
+        to move the blue box
+    `
+} else {
+    title.innerHTML = `
+        Press
+        <span class="nowrap">(&uparrow; / &downarrow; / &leftarrow; / &rightarrow; / &UnderBracket;)</span>
+        <span class="nowrap">inside the red box</span>
+        to move the blue box
+    `
+}
+
+redBox.addEventListener("mouseenter", () => {
+    document.body.classList.add("no-scroll");
+});
+
+redBox.addEventListener("mouseleave", () => {
+    document.body.classList.remove("no-scroll");
+});
+
+redBox.addEventListener("touchstart", () => {
+    document.body.classList.add("no-scroll");
+});
+
+redBox.addEventListener("touchend", () => {
+    document.body.classList.remove("no-scroll");
+});
+
 let axisY = 0,
     axisX = 0,
     movingLength = 15;
