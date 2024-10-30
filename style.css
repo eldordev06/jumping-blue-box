@@ -29,6 +29,7 @@
 
 .no-scroll {
     overflow: hidden;
+    overscroll-behavior: none;
 }
 
 /* || GENERAL CLASSES */
