@@ -29,13 +29,17 @@
 
 /* || GENERAL CLASSES */
 
-body {
-    min-height: 100vh;
+html {
+    height: 100%;
     background-image: radial-gradient(circle, var(--LIGHT_PINKISH_GRAY), var(--DARK_GRAYISH_RED));
+}
+
+body {
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .title {
