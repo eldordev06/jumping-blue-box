@@ -27,6 +27,10 @@
     white-space: nowrap;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 /* || GENERAL CLASSES */
 
 html {
@@ -39,7 +43,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* overflow: hidden; */
 }
 
 .title {
